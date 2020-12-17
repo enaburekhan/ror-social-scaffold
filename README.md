@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-![social-media](https://enaburekhan-social-media-app.herokuapp.com/)
+[social-media](https://enaburekhan-social-media-app.herokuapp.com/)
 
 
 ## Getting Started
