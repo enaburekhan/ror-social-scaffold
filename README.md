@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-TBA
+![social-media](https://enaburekhan-social-media-app.herokuapp.com/)
 
 
 ## Getting Started
@@ -67,7 +67,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+https://enaburekhan-social-media-app.herokuapp.com/
 
 ## Author
 
@@ -95,9 +95,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+Many thanks to Microverse for giving us the opportunity to build this challenging and fascinating project
 
-## 📝 License
+## 📝 Copyright
 
-TBA
+This is a project developed by Microverse Student as part of skill curriculum.
 
