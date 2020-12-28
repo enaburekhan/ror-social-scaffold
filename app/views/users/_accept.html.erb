@@ -1,0 +1,10 @@
+<td>
+  <%= link_to 'Accept',
+    friendship_path(search_friendship(@user.id, current_user.id)),
+    method: :put, class: 'p-1 btn btn-success' %>
+  </td>
+  <td>
+  <%= link_to 'Not now!',
+    friendship_path(@user.id),
+    method: :delete, class: 'p-1 btn btn-danger' %>
+</td>
