@@ -27,11 +27,11 @@ class FriendshipsController < ApplicationController
 
   private
 
-  def request_exist?
-    current_user.already_friend?(User.find_by(id: params[:friendship][:friend_id]))
-  end
-
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :confirmed)
+  end
+
+  def request_exist?
+    current_user.already_friend?(User.find_by(id: params[:friendship][:friend_id]))
   end
 end

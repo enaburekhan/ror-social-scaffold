@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   validates :content, presence: true, length: { maximum: 1000,
-                                                too_long: '1000 characters in post is the maximum allowed.' }
+                                                too_long: 'You have exceeded the maximum characters allowed per post(1000)' }
 
   belongs_to :user
 
