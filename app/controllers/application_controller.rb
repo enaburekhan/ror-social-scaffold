@@ -2,7 +2,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :search_friendship
 
+  def search_friendship(user_id, friend_id)
+    return if user_id == friend_id
+
+    friendship = Friendship.find_by(user_id: user_id, friend_id: friend_id)
+
+  if friendship.nil?
+    friendship = Friendship.find_by(user_id: friend_id, friend_id: user_id)
+  end
+
+    if friendship.nil?
+      return nil
+    else
+      return friendship.id
+    end
+  end
+  
   protected
 
   def configure_permitted_parameters
