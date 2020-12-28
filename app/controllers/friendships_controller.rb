@@ -10,19 +10,16 @@ class FriendshipsController < ApplicationController
       redirect_to users_path,
                   alert: 'Request already sent'
     elsif !request_exist? && @friendship.save
-      redirect_to users_path
     end
   end
 
-  def show
+  def show; end
 
-  end
+  private
 
   def update
     @friendship = Friendship.find(params[:id])
-    if @friendship.confirmed == false and @friendship.accept_request
-    redirect_to users_path
-    end
+    redirect_to users_path if @friendship.confirmed == false and @friendship.accept_request
   end
 
   def destroy
@@ -40,5 +37,6 @@ class FriendshipsController < ApplicationController
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :confirmed)
   end
+  
 
 end 
