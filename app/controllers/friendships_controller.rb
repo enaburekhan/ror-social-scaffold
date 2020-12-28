@@ -1,5 +1,4 @@
 class FriendshipsController < ApplicationController
-  
   def new
     @friendship = Friendship.new
   end
@@ -14,8 +13,6 @@ class FriendshipsController < ApplicationController
   end
 
   def show; end
-
-  private
 
   def update
     @friendship = Friendship.find(params[:id])
@@ -37,6 +34,4 @@ class FriendshipsController < ApplicationController
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :confirmed)
   end
-  
-
-end 
+end

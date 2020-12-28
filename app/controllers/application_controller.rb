@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
       friendship.id
     end
   end
-  
+
   protected
 
   def configure_permitted_parameters

@@ -1,8 +1,8 @@
-<li>
-  Name: <%= user.name %>
+<ul class = 'mb-4'>
+  <li class = 'btn btn-success'>Name: <%= user.name%></li>
   <span class="profile-link">
-    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <li> <%= link_to 'See Profile',  user_path(user), class: 'btn btn-warning' %> </li>
   </span>
-
-   <%= render_friendship_btn user%>  
-</li>
+  <li class = 'btn btn-danger'> <%= render_friendship_btn user%> </li>
+</ul>
+<hr>

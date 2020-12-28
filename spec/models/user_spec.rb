@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
-
   context 'Association Test' do
     it 'has many posts' do
       expect(User.reflect_on_association(:posts).macro).to be :has_many
@@ -33,7 +32,5 @@ RSpec.describe User, type: :model do
     it 'has many friend request' do
       expect(User.reflect_on_association(:friend_requests).macro).to be :has_many
     end
-
   end
-
 end

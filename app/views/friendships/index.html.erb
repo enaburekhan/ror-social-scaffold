@@ -1,16 +1,26 @@
-<div class="section-2">
+<div>
   <h2>You have <%= pluralize(current_user.friends.count, 'friend')%> </h2>
   <% current_user.friends.each do |user|%>
-  <div>
-    <div class="mt">
-      <%= link_to user_path(user)do%>
-        <h2><%= user.name%></h2>
-      <%end%>
-      <div class="mt">
-      <%= link_to 'See Profile',  user_path(user), class:"p-link"%>
-      <%= render_friendship_btn user%>
-      </div>
-    </div>
-  </div>
-<%end%>
+    <thead>
+      <tr>
+        <th scope="col">
+          <%= link_to user_path(user)do%>
+            <h2 class = 'mb-3 mt-3 text-success'><%= user.name%></h2>
+          <%end%>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> 
+        <td class = ''>
+          <%= link_to 'See Profile',  user_path(user), class:"btn btn-secondary p-1"%>
+        </td>
+        <td>
+        <div class = 'btn btn-danger p-1'>
+          <%= render_friendship_btn user%>
+        </div>
+        </td>
+      </tr>
+    </tbody>
+  <%end%>
 </div>
