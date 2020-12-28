@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    
+    authorized_posts
   end
 
   def create
@@ -19,7 +19,13 @@ class PostsController < ApplicationController
 
   private
 
-  
+  def authorized_posts
+    all_posts = Post.where(user: current_user.friends)
+    all_posts += current_user.posts
+    @authorized_posts ||= all_posts.sort { |a, b| b.created_at <=> a.created_at }
+  end
+ 
+
   def post_params
     params.require(:post).permit(:content)
   end
