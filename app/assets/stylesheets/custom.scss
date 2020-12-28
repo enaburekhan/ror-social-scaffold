@@ -39,7 +39,7 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 16px 48px;
+  padding: 16px 18px;
   background-color: $primary-color-dark;
   color: $primary-color-light;
 
@@ -58,12 +58,12 @@ a {
   }
 
   .menu {
-    width: 80%;
+    width: 70%;
     justify-content: space-between;
 
     .menu-item {
       float: left;
-      margin: 0 15px;
+      margin: 0 8px;
     }
   }
 }
@@ -321,6 +321,10 @@ form {
   ul {
     color: #f00;
   }
+}
+
+.current-user {
+  margin-top: 10px;
 }
 
 @media only screen and (min-width: 480px) {
