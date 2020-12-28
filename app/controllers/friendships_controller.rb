@@ -9,6 +9,7 @@ class FriendshipsController < ApplicationController
       redirect_to users_path,
                   alert: 'Request already sent'
     elsif !request_exist? && @friendship.save
+      redirect_to users_path
     end
   end
 

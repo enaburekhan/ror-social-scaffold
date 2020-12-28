@@ -7,17 +7,18 @@ module UserHelper
 
     if !current_user.friend?(user) && !current_user.already_friend?(user)
       link_to 'Add Friend', friendships_path(friendship_param),
-              method: :post, class: 'button-green'
+              method: :post
+  
 
     elsif !current_user.already_friend?(user)
       link_to 'Remove friend',
               friendship_path(delete_param),
-              method: :delete, class: 'button-red'
+              method: :delete
 
     elsif current_user.already_friend?(user)
       capture do
-        link_to 'Delete Request', friendship_path(delete_param),
-                method: :delete, class: 'button-red'
+        link_to 'Cancel Request', friendship_path(delete_param),
+                method: :delete
       end
     end
   end
