@@ -8,7 +8,6 @@ module UserHelper
     if !current_user.friend?(user) && !current_user.already_friend?(user)
       link_to 'Add Friend', friendships_path(friendship_param),
               method: :post, class: 'btn btn-success p-1'
-  
 
     elsif !current_user.already_friend?(user)
       link_to 'Remove friend',
