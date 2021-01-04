@@ -1,7 +1,7 @@
 <ul class = 'mb-4'>
-  <li class = 'btn btn-success'>Name: <%= user.name%></li>
+  <li class = 'green'>Name: <%= user.name%></li>
   <span class="profile-link">
-    <li> <%= link_to 'See Profile',  user_path(user), class: 'btn btn-warning' %> </li>
+    <li> <%= link_to 'See Profile',  user_path(user), class: 'yellow' %> </li>
   </span>
   <li> <%= render_friendship_btn user%> </li>
 </ul>

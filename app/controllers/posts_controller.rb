@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    authorized_posts
+    timeline_posts
   end
 
   def create
@@ -12,17 +12,17 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
-      friends_and_own_posts
+      timeline_posts
       render :index, alert: 'Post was not created.'
     end
   end
 
   private
 
-  def authorized_posts
-    all_posts = Post.where(user: current_user.friends)
-    all_posts += current_user.posts
-    @authorized_posts ||= all_posts.sort { |a, b| b.created_at <=> a.created_at }
+  def timeline_posts
+    ids = current_user.friends.map(&:id) << current_user.id
+    posts = Post.where(user_id: ids)
+    @timeline_posts ||= posts.all.ordered_by_most_recent.includes(:user)
   end
 
   def post_params

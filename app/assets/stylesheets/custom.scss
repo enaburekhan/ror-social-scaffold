@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
-@import 'bootstrap/dist/css/bootstrap';
+
 
 $primary-color-dark: #689f38;
 $primary-color: #8bc34a;
@@ -351,4 +351,41 @@ form {
   .user-section {
     width: 50%;
   }
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: rgb(177, 177, 40);
+}
+
+.red {
+  color: red;
+}
+
+.yellow2 {
+  color: rgb(202, 43, 131);
+  padding-left: 20px;
+}
+
+.username {
+  font-size: 23px;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+.profile {
+
+  padding-left: 10px;
+}
+
+.hr {
+  margin-top: 10px;
+}
+
+.p1 {
+  padding-left: 10px;
 }

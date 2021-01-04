@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <h2>You have <%= pluralize(current_user.friend_requests.count, 'Friend requests')%> </h2>
   <% current_user.friend_requests.each do |user|%>
     <table class="table">
@@ -6,7 +6,7 @@
         <tr> 
           <th scope="col"> 
             <%= link_to user_path(user) do%>
-              <h2><%= user.name%></h2>
+              <h2  class = 'hr'><%= user.name%></h2>
             <%end%>
           </th>  
         </tr>
@@ -16,20 +16,21 @@
           <td>
             <%= link_to 'See Profile',
             user_path(user),
-            class: 'btn btn-secondary p-1' %>
+            class: 'yellow' %>
           </td>
           <td>
             <%= link_to 'Accept',
               friendship_path(search_friendship(user.id, current_user.id)),
-              method: :put, class: 'p-1 btn btn-success' %>
+              method: :put, class: 'green p1' %>
             </td>
           <td>
             <%= link_to 'Not now!',
               friendship_path(user.id),
-              method: :delete, class: 'p-1 btn btn-danger' %>
+              method: :delete, class: 'red p1' %>
           </td>
         </tr>
       </tbody>
     </table>
+    <hr class = 'hr'>
   <%end%>
 </div>

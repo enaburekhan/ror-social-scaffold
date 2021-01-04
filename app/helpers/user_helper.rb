@@ -7,18 +7,24 @@ module UserHelper
 
     if !current_user.friend?(user) && !current_user.already_friend?(user)
       link_to 'Add Friend', friendships_path(friendship_param),
-              method: :post, class: 'btn btn-success p-1'
+              method: :post, class: 'green'
 
     elsif !current_user.already_friend?(user)
       link_to 'Remove friend',
               friendship_path(delete_param),
-              method: :delete, class: 'btn btn-danger p-1'
+              method: :delete, class: 'red'
 
     elsif current_user.already_friend?(user)
-      capture do
-        link_to 'Cancel Request', friendship_path(delete_param),
-                method: :delete, class: 'btn btn-danger p-1'
+      link =capture {link_to 'Delete Request', friendship_path(delete_param),
+        method: :delete, class: 'red'}
+      link<< capture {link_to 'Pengind request..', friendship_path(current_user),
+        class: 'yellow2'}
+        
       end
     end
   end
-end
+
+  def render_request_btn(user)
+
+
+  end
