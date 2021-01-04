@@ -1,7 +1,7 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
   <div>
-    <%= render 'users/accept'%>
+    <%= render_friendship_btn @user %>
   </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
