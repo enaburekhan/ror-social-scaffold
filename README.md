@@ -37,6 +37,8 @@ Setup database with:
    rails db:migrate
 ```
 
+Install yarn with "sudo apt install yarn"
+
 ### Github Actions
 
 To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
